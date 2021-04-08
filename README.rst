@@ -24,23 +24,27 @@ Building
 
 1) Get gmmlib repo
 
-       |- gmmlib
+   $ git clone https://github.com/VCDP/gmmlib.git
 
 2) Change it to root directory
 
    $ cd gmmlib
 
+   Check out intel-media-sg1 branch or intel-media-sg1-pv* tag.
+
 3) $ mkdir build && cd build
 
-4) cmake [-DCMAKE_BUILD_TYPE= Release | Debug | ReleaseInternal] [-DARCH= 64 | 32]  ..
+4) cmake -DGMM_DYNAMIC_MOCS_TABLE=TRUE [-DCMAKE_BUILD_TYPE= Release | Debug | ReleaseInternal] [-DARCH= 64 | 32]  ..
 
-5) $ make -j8 ( Also performs compile time ULT)
+5) $ make -j $(nproc) ( Also performs compile time ULT)
 
  
 Install
 ^^^^^^^
 Not a stand alone software component.
 GmmLib is built as dynamic library for Intel media driver and Compute runtime for OpenCL
+
+  $ sudo make install
 
 Supported Platforms
 -------------------
